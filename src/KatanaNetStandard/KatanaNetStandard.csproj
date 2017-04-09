@@ -8,11 +8,16 @@
     <PackageTags>owin, katana</PackageTags>
     <AssemblyVersion>3.0.1.0</AssemblyVersion>
     <FileVersion>3.0.1.0</FileVersion>
-    <Description>Fork of KatanaProject ( Microsoft.Owin ) that targets NetStandard1.3 and merges in IAppBuilder from owin.dll.</Description>
+    <Description>Fork of KatanaProject's Microsoft.Owin that targets NetStandard1.3 and merges in IAppBuilder from owin.dll. Does not contain the other middleware.</Description>
     <Company />
     <Authors>Damian Hickey</Authors>
     <Version>3.0.1</Version>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <PackageReleaseNotes>Based off Microsoft.Owin 3.0.1</PackageReleaseNotes>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DocumentationFile>bin\Release\netstandard1.3\KatanaNetStandard.xml</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
     <!-- Need to exlude the obj,bin and properties folders. Better way to glob? -->
