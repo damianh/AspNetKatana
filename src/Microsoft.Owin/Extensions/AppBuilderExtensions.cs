@@ -66,7 +66,11 @@ namespace Microsoft.Owin.Builder
                     return;
                 }
             }
+#if NETSTANDARD1_3
+            throw new MissingMethodException($"Type: {builder.GetType().FullName}, Method: AddSignatureConversion");
+#else
             throw new MissingMethodException(builder.GetType().FullName, "AddSignatureConversion");
+#endif
         }
 
         /// <summary>

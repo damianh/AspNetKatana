@@ -1,0 +1,29 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard1.3</TargetFramework>
+    <RootNamespace>Microsoft.Owin</RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <!-- Need to exlude the obj,bin and properties folders. Better way to glob? -->
+    <Compile Include="..\Microsoft.Owin\*.cs" />
+    <Compile Include="..\Microsoft.Owin\Builder\Constants.cs" />
+    <Compile Include="..\Microsoft.Owin\Builder\NotFound.cs" />
+    <Compile Include="..\Microsoft.Owin\BuilderProperties\**\*.cs" />
+    <Compile Include="..\Microsoft.Owin\Extensions\**\*.cs" />
+    <Compile Include="..\Microsoft.Owin\Helpers\**\*.cs" />
+    <Compile Include="..\Microsoft.Owin\Infrastructure\**\*.cs" />
+    <Compile Include="..\Microsoft.Owin\Loader\**\*.cs" />
+    <Compile Include="..\Microsoft.Owin\Logging\AppBuilderLoggerExtensions.cs" />
+    <Compile Include="..\Microsoft.Owin\Logging\ILogger.cs" />
+    <Compile Include="..\Microsoft.Owin\Logging\ILoggerFactory.cs" />
+    <Compile Include="..\Microsoft.Owin\Logging\LoggerExtensions.cs" />
+    <Compile Include="..\Microsoft.Owin\Mapping\**\*.cs" />
+    <Compile Include="..\Microsoft.Owin\Security\**\*.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="System.Globalization.Extensions" Version="4.3.0" />
+    <PackageReference Include="System.Security.Claims" Version="4.3.0" />
+  </ItemGroup>
+
+</Project>

@@ -189,7 +189,7 @@ namespace Microsoft.Owin.Security
             {
                 if (value.HasValue)
                 {
-                    _dictionary[RefreshKey] = value.Value.ToString(CultureInfo.InvariantCulture);
+                    _dictionary[RefreshKey] = value.Value.ToString();
                 }
                 else
                 {

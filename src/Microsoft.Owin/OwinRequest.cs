@@ -142,7 +142,7 @@ namespace Microsoft.Owin
         /// <returns>The uniform resource identifier (URI) associated with the request.</returns>
         public virtual Uri Uri
         {
-            get { return new Uri(Scheme + Uri.SchemeDelimiter + Host + PathBase + Path + QueryString); }
+            get { return new Uri(Scheme + "://" + Host + PathBase + Path + QueryString); }
         }
 
         /// <summary>

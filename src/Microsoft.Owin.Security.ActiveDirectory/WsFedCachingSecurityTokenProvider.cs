@@ -81,6 +81,7 @@ namespace Microsoft.Owin.Security.ActiveDirectory
             }
         }
 
+        [SuppressMessage("Microsoft.Design", "CA1031:DoNotCatchGeneralExceptionTypes")]
         private void RefreshMetadata()
         {
             if (_syncAfter >= DateTimeOffset.UtcNow)
