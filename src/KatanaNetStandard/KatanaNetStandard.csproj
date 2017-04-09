@@ -3,6 +3,16 @@
   <PropertyGroup>
     <TargetFramework>netstandard1.3</TargetFramework>
     <RootNamespace>Microsoft.Owin</RootNamespace>
+    <PackageProjectUrl>https://github.com/damianh/AspNetKatana</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/damianh/AspNetKatana</RepositoryUrl>
+    <PackageTags>owin, katana</PackageTags>
+    <AssemblyVersion>3.0.1.0</AssemblyVersion>
+    <FileVersion>3.0.1.0</FileVersion>
+    <Description>Fork of KatanaProject ( Microsoft.Owin ) that targets NetStandard1.3 and merges in IAppBuilder from owin.dll.</Description>
+    <Company />
+    <Authors>Damian Hickey</Authors>
+    <Version>3.0.1</Version>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
   </PropertyGroup>
   <ItemGroup>
     <!-- Need to exlude the obj,bin and properties folders. Better way to glob? -->
