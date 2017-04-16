@@ -23,7 +23,7 @@
 
         public static MethodInfo GetMethod(this Type type, string name)
         {
-            return Enumerable.FirstOrDefault<MethodInfo>(GetMethods(type), m => m.Name == name);
+            return GetMethods(type).FirstOrDefault(m => m.Name == name);
         }
 
         public static bool IsAssignableFrom(this Type type, Type otherType)
