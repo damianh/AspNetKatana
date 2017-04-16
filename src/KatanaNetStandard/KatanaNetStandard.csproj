@@ -13,7 +13,7 @@
      .NET core.</Description>
     <Company />
     <Authors>Damian Hickey</Authors>
-    <Version>3.0.3</Version>
+    <Version>3.0.4</Version>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <PackageReleaseNotes>Based off Microsoft.Owin 3.0.1</PackageReleaseNotes>
     <DisableImplicitFrameworkReferences>true</DisableImplicitFrameworkReferences>
@@ -21,18 +21,22 @@
 
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net45|AnyCPU'">
     <DocumentationFile>bin\Debug\net45\KatanaNetStandard.xml</DocumentationFile>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net45|AnyCPU'">
     <DocumentationFile>bin\Release\net45\KatanaNetStandard.xml</DocumentationFile>
+    <DefineConstants>TRACE;RELEASE</DefineConstants>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|netstandard1.3|AnyCPU'">
     <DocumentationFile>bin\Debug\netstandard1.3\KatanaNetStandard.xml</DocumentationFile>
+    <DefineConstants>TRACE;DEBUG;NETSTANDARD1_6</DefineConstants>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|netstandard1.3|AnyCPU'">
     <DocumentationFile>bin\Release\netstandard1.3\KatanaNetStandard.xml</DocumentationFile>
+    <DefineConstants>TRACE;RELEASE;NETSTANDARD1_6</DefineConstants>
   </PropertyGroup>
 
   <ItemGroup>
