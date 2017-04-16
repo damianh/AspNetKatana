@@ -152,13 +152,13 @@ namespace Microsoft.Owin.Builder
             {
                 throw new ArgumentException(Resources.Exception_ConversionTakesOneParameter, "conversion");
             }
-            Tuple<Type, Type> key = Tuple.Create(conversion.Method.ReturnType, parameterType);
+            Tuple<Type, Type> key = Tuple.Create(conversion.GetMethodInfo().ReturnType, parameterType);
             _conversions[key] = conversion;
         }
 
         private static Type GetParameterType(Delegate function)
         {
-            ParameterInfo[] parameters = function.Method.GetParameters();
+            ParameterInfo[] parameters = function.GetMethodInfo().GetParameters();
             return parameters.Length >= 1 ? parameters[0].ParameterType : null;
         }
 
@@ -287,7 +287,7 @@ namespace Microsoft.Owin.Builder
                 {
                     continue;
                 }
-                return Delegate.CreateDelegate(signature, app, method);
+                return method.CreateDelegate(signature, app);
             }
             return null;
         }
@@ -391,7 +391,7 @@ namespace Microsoft.Owin.Builder
                 }
                 IEnumerable<Type> genericFuncTypes = parameterTypes.Concat(new[] { method.ReturnType });
                 Type funcType = Expression.GetFuncType(genericFuncTypes.ToArray());
-                Delegate middlewareDelegate = Delegate.CreateDelegate(funcType, middlewareObject, method);
+                Delegate middlewareDelegate = method.CreateDelegate(funcType, middlewareObject);
                 return Tuple.Create(parameters[0].ParameterType, middlewareDelegate, args);
             }
             return null;
@@ -430,7 +430,7 @@ namespace Microsoft.Owin.Builder
 
         private static bool TestArgForParameter(Type parameterType, object arg)
         {
-            return (arg == null && !parameterType.IsValueType) ||
+            return (arg == null && !parameterType.GetTypeInfo().IsValueType) ||
                 parameterType.IsInstanceOfType(arg);
         }
     }

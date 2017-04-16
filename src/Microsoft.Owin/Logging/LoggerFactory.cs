@@ -10,7 +10,11 @@ namespace Microsoft.Owin.Logging
     {
         static LoggerFactory()
         {
+#if NET45
             Default = new DiagnosticsLoggerFactory();
+#else
+            Default = null;
+#endif
         }
 
         /// <summary>
