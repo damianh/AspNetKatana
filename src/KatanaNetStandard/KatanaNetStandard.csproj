@@ -31,12 +31,12 @@
 
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|netstandard1.3|AnyCPU'">
     <DocumentationFile>bin\Debug\netstandard1.3\KatanaNetStandard.xml</DocumentationFile>
-    <DefineConstants>TRACE;DEBUG;NETSTANDARD1_6</DefineConstants>
+    <DefineConstants>TRACE;DEBUG;NETSTANDARD1_3</DefineConstants>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|netstandard1.3|AnyCPU'">
     <DocumentationFile>bin\Release\netstandard1.3\KatanaNetStandard.xml</DocumentationFile>
-    <DefineConstants>TRACE;RELEASE;NETSTANDARD1_6</DefineConstants>
+    <DefineConstants>TRACE;RELEASE;NETSTANDARD1_3</DefineConstants>
   </PropertyGroup>
 
   <ItemGroup>
