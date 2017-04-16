@@ -35,10 +35,6 @@
     <DocumentationFile>bin\Release\netstandard1.3\KatanaNetStandard.xml</DocumentationFile>
   </PropertyGroup>
 
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <DocumentationFile>bin\Release\netstandard1.3\KatanaNetStandard.xml</DocumentationFile>
-  </PropertyGroup>
-
   <ItemGroup>
     <!-- Need to exlude the obj,bin and properties folders. Better way to glob? -->
     <Compile Include="..\Microsoft.Owin\*.cs" />
