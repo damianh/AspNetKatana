@@ -6,57 +6,31 @@
     <PackageProjectUrl>https://github.com/damianh/AspNetKatana</PackageProjectUrl>
     <RepositoryUrl>https://github.com/damianh/AspNetKatana</RepositoryUrl>
     <PackageTags>owin, katana</PackageTags>
-    <AssemblyVersion>3.0.1.0</AssemblyVersion>
-    <FileVersion>3.0.1.0</FileVersion>
+    <AssemblyVersion>3.0.2.0</AssemblyVersion>
+    <FileVersion>3.0.2.0</FileVersion>
     <Description>Fork of KatanaProject's Microsoft.Owin that targets NetStandard1.3, Net45 and merges in IAppBuilder from owin.dll.
      Does not contain the other middleware (yet). Created primarily to not have to rewite a mountain of code while migrating to 
      .NET core.</Description>
     <Company />
     <Authors>Damian Hickey</Authors>
-    <Version>3.0.4</Version>
+    <Version>3.0.5</Version>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <PackageReleaseNotes>Based off Microsoft.Owin 3.0.1</PackageReleaseNotes>
     <DisableImplicitFrameworkReferences>true</DisableImplicitFrameworkReferences>
-    
+    <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\$(MSBuildProjectName).xml</DocumentationFile>
   </PropertyGroup>
 
-  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net45|AnyCPU'">
-    <DocumentationFile>bin\Debug\net45\KatanaNetStandard.xml</DocumentationFile>
-    <DefineConstants>TRACE;DEBUG</DefineConstants>
+  <PropertyGroup Condition="'$(TargetFramework)'=='net45'">
+    <DefineConstants>$(DefineConstants);NET45</DefineConstants>
   </PropertyGroup>
 
-  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net45|AnyCPU'">
-    <DocumentationFile>bin\Release\net45\KatanaNetStandard.xml</DocumentationFile>
-    <DefineConstants>TRACE;RELEASE</DefineConstants>
-  </PropertyGroup>
-
-  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|netstandard1.3|AnyCPU'">
-    <DocumentationFile>bin\Debug\netstandard1.3\KatanaNetStandard.xml</DocumentationFile>
-    <DefineConstants>TRACE;DEBUG;NETSTANDARD1_3</DefineConstants>
-  </PropertyGroup>
-
-  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|netstandard1.3|AnyCPU'">
-    <DocumentationFile>bin\Release\netstandard1.3\KatanaNetStandard.xml</DocumentationFile>
-    <DefineConstants>TRACE;RELEASE;NETSTANDARD1_3</DefineConstants>
+  <PropertyGroup Condition="'$(TargetFramework)'=='netstandard1.3'">
+    <DefineConstants>$(DefineConstants);NETSTANDARD1_3</DefineConstants>
   </PropertyGroup>
 
   <ItemGroup>
     <ProjectCapability Include="ShowFilesOutsideOfProject" />
-    <!-- Need to exlude the obj,bin and properties folders. Better way to glob? -->
-    <Compile Include="..\Microsoft.Owin\*.cs" />
-    <Compile Include="..\Microsoft.Owin\Builder\Constants.cs" />
-    <Compile Include="..\Microsoft.Owin\Builder\NotFound.cs" />
-    <Compile Include="..\Microsoft.Owin\BuilderProperties\**\*.cs" />
-    <Compile Include="..\Microsoft.Owin\Extensions\**\*.cs" />
-    <Compile Include="..\Microsoft.Owin\Helpers\**\*.cs" />
-    <Compile Include="..\Microsoft.Owin\Infrastructure\**\*.cs" />
-    <Compile Include="..\Microsoft.Owin\Loader\**\*.cs" />
-    <Compile Include="..\Microsoft.Owin\Logging\AppBuilderLoggerExtensions.cs" />
-    <Compile Include="..\Microsoft.Owin\Logging\ILogger.cs" />
-    <Compile Include="..\Microsoft.Owin\Logging\ILoggerFactory.cs" />
-    <Compile Include="..\Microsoft.Owin\Logging\LoggerExtensions.cs" />
-    <Compile Include="..\Microsoft.Owin\Mapping\**\*.cs" />
-    <Compile Include="..\Microsoft.Owin\Security\**\*.cs" />
+    <None Include="..\Microsoft.Owin\**\*.cs;*" Exclude="**\obj\**\*.*;**\bin\**\*.*" />
   </ItemGroup>
 
   <ItemGroup Condition=" '$(TargetFramework)' == 'net45' ">
