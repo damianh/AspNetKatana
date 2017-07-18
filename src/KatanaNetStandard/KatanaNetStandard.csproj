@@ -32,6 +32,7 @@
   <ItemGroup>
     <ProjectCapability Include="ShowFilesOutsideOfProject" />
     <Compile Include="..\Microsoft.Owin\**\*.cs;*" Exclude="**\obj\**\*.*;**\bin\**\*.*;..\Microsoft.Owin\Properties\**\*.*" />
+    <EmbeddedResource Include="..\Microsoft.Owin\**\*.resx" />
     <Compile Include="Logging\TraceEvent.cs" />
     <Compile Include="Builder\TypeExtensions.cs" />
   </ItemGroup>
