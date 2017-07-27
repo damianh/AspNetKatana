@@ -6,14 +6,14 @@
     <PackageProjectUrl>https://github.com/damianh/AspNetKatana</PackageProjectUrl>
     <RepositoryUrl>https://github.com/damianh/AspNetKatana</RepositoryUrl>
     <PackageTags>owin, katana</PackageTags>
-    <AssemblyVersion>3.0.2.0</AssemblyVersion>
-    <FileVersion>3.0.2.0</FileVersion>
+    <AssemblyVersion>3.0.7.0</AssemblyVersion>
+    <FileVersion>3.0.7.0</FileVersion>
     <Description>Fork of KatanaProject's Microsoft.Owin that targets NetStandard1.3, Net45 and merges in IAppBuilder from owin.dll.
      Does not contain the other middleware (yet). Created primarily to not have to rewite a mountain of code while migrating to 
      .NET core.</Description>
     <Company />
     <Authors>Damian Hickey</Authors>
-    <Version>3.0.6</Version>
+    <Version>3.0.7</Version>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <PackageReleaseNotes>Based off Microsoft.Owin 3.0.1</PackageReleaseNotes>
     <DisableImplicitFrameworkReferences>true</DisableImplicitFrameworkReferences>
@@ -32,6 +32,7 @@
   <ItemGroup>
     <ProjectCapability Include="ShowFilesOutsideOfProject" />
     <Compile Include="..\Microsoft.Owin\**\*.cs;*" Exclude="**\obj\**\*.*;**\bin\**\*.*;..\Microsoft.Owin\Properties\**\*.*" />
+    <EmbeddedResource Include="..\Microsoft.Owin\**\*.resx" />
     <Compile Include="Logging\TraceEvent.cs" />
     <Compile Include="Builder\TypeExtensions.cs" />
   </ItemGroup>
